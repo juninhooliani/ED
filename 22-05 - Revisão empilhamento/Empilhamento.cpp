@@ -8,7 +8,11 @@ int main(){
     int op;
     
     do {
-        printf ("1 - Inserir | 2 - Listar Fila | 3 - Listar Pilha  | 4 - Excluir \n5 - Empilhar \n6 Limpar Fila | 7 - Limpar Pilha | 8 Limpar Tudo | 9 - Sair\n");
+        printf ("#########################################################################\n");
+        printf ("###   1 - Inserir | 2 - Listar Fila | 3 - Listar Pilha  | 4 - Excluir ###");
+        printf("\n###   5 - Empilhar                                                    ###");
+        printf("\n###   6 Limpar Fila | 7 - Limpar Pilha | 8 Limpar Tudo | 9 - Sair     ###");
+        printf ("\n#########################################################################\n");
         scanf ("%d", &op);
         switch (op){
         case 1:
