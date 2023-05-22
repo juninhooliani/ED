@@ -93,6 +93,12 @@ namespace std {
 
     Aluno empilhar (Aluno **ini, Aluno **f, Aluno **t){
         if (*ini == NULL) printf ("Fila vazia");
+        else if (*ini == *f) {
+            Aluno *aux = (Aluno *) malloc (sizeof(Aluno));
+            aux->prox = NULL;
+            aux->ra = (*ini)->ra;
+            *t = aux;
+        }
         else {
             Aluno *auxF = *ini;
             Aluno *aux2, *aux3;
