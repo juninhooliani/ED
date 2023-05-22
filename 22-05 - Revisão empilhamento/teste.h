@@ -9,13 +9,14 @@
 namespace std {
     typedef struct Aluno {
         int ra;
+        char nome;
         Aluno *prox;
     };
 
     //funções
 
     Aluno *novoElemento (){
-        Aluno *aux = (Aluno *)malloc (sizeof(Aluno));
+        aluno *aux = (Aluno *)malloc (sizeof(Aluno));
         if (aux == NULL) {
             printf ("Sem espaco na memoria");
             return NULL;
@@ -26,7 +27,7 @@ namespace std {
     }
 
     void inserir (Aluno **ini, Aluno **f){
-        Aluno *aux = novoElemento ();
+        aluno *aux = novoElemento ();
         aux->prox=NULL;
         if (*ini == NULL) {
             *ini = aux;
@@ -38,7 +39,7 @@ namespace std {
     }
 
     Aluno *listarFila (Aluno **ini){
-        Aluno *aux = *ini;
+        aluno *aux = *ini;
         if (aux == NULL) return NULL;
         printf ("Ra: %d\n", aux->ra);
         listarFila (&aux->prox);
@@ -46,7 +47,7 @@ namespace std {
     }
 
     Aluno *listarPilha (Aluno *t){
-        Aluno *aux = t;
+        aluno *aux = t;
         if (aux == NULL) return NULL;
         else {
             printf ("RA: %d\n", aux->ra);
@@ -60,7 +61,7 @@ namespace std {
 
     void excluir (Aluno **ini, Aluno **f){
         if (*ini == NULL) printf ("Lista vazia");
-        else if (*ini == *f){
+        else if (*ini == *f){ ////////////////////////////////////
             free (*ini);
             *ini = NULL;
             *f = NULL;
@@ -83,7 +84,7 @@ namespace std {
     }
 
     void limparPilha (Aluno **t){
-       while (*t != NULL){
+       while (*t != NULL){/////////////////////////////
         Aluno *aux = *t;
         *t = (*t)->prox;
         free (aux);
@@ -104,7 +105,7 @@ namespace std {
             Aluno *aux2, *aux3;
             aux3 = (Aluno *) malloc (sizeof(Aluno));
             aux3->prox=NULL;
-            aux2 = aux3;
+            aux2 = aux3; /////////////////////////////////////////////
             while (auxF != NULL){
                 aux3->ra = auxF->ra;
                 aux3 = (Aluno *)malloc (sizeof(Aluno));
